@@ -1,7 +1,6 @@
 # Custom Swift package
-This is a small proof of concept project to demonstrate how to build your own Swift package. 
-This package includes various types of buttons that can be easily integrated into a SwiftUI iOS app by adding dependencies through the Swift package manager.
 
+This project is demonstrating how to create a custom Swift package. It includes a collection of reusable SwiftUI buttons that can be effortlessly integrated into an iOS app via the Swift Package Manager.
 
 ## Installation
 
