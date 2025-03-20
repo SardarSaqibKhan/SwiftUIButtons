@@ -29,8 +29,10 @@ public struct PrimaryButton: View {
     public var body: some View {
         Button(action: action) {
             Text(text)
+                .font(.system(size: fontSize))
                 .foregroundColor(foregroundColor)
                 .padding()
+                .frame(maxWidth: .infinity)
                 .background(backgroundColor)
                 .cornerRadius(cornerRadius)
         }
