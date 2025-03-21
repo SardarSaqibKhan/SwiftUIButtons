@@ -1,25 +1,29 @@
 //
-//  PrimaryButton.swift
-//  
+//  SwiftUIView.swift
+//  SwiftUIButtons
 //
-//  Created by sardar saqib on 20/03/2025.
+//  Created by sardar saqib on 21/03/2025.
 //
 
 import SwiftUI
 
 @available(iOS 13.0.0, *)
-public struct PrimaryButton: View {
+public struct PrimaryGradientButton: View {
     var text: String
     var fontSize: CGFloat
-    var backgroundColor: Color
+    var gradientColors: [Color]
+    var startPoint: UnitPoint
+    var endPoint: UnitPoint
     var foregroundColor: Color
     var cornerRadius: CGFloat
     var action: () -> Void
     
-    public init(text: String, fontSize: CGFloat, backgroundColor: Color, foregroundColor: Color, cornerRadius: CGFloat, action: @escaping () -> Void) {
+    public init(text: String, fontSize: CGFloat, gradientColors: [Color],startPoint: UnitPoint, endPoint: UnitPoint, foregroundColor: Color, cornerRadius: CGFloat, action: @escaping () -> Void) {
         self.text = text
         self.fontSize = fontSize
-        self.backgroundColor = backgroundColor
+        self.gradientColors = gradientColors
+        self.startPoint = startPoint
+        self.endPoint = endPoint
         self.foregroundColor = foregroundColor
         self.cornerRadius = cornerRadius
         self.action = action
@@ -33,19 +37,10 @@ public struct PrimaryButton: View {
                 .foregroundColor(foregroundColor)
                 .padding()
                 .frame(maxWidth: .infinity)
-                .background(backgroundColor)
+                .background(
+                    LinearGradient(gradient: Gradient(colors: gradientColors), startPoint: startPoint, endPoint: endPoint)
+                )
                 .cornerRadius(cornerRadius)
         }
     }
-}
-@available(iOS 13.0.0, *)
-#Preview {
-    PrimaryButton(
-        text: "Test Button",
-        fontSize: 17,
-        backgroundColor: .blue,
-        foregroundColor: .black,
-        cornerRadius: 10) {
-            
-        }
 }

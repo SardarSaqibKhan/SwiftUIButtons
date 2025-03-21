@@ -1,14 +1,14 @@
 //
-//  PrimaryButton.swift
-//  
+//  SwiftUIView.swift
+//  SwiftUIButtons
 //
-//  Created by sardar saqib on 20/03/2025.
+//  Created by sardar saqib on 21/03/2025.
 //
 
 import SwiftUI
 
 @available(iOS 13.0.0, *)
-public struct PrimaryButton: View {
+public struct PrimaryScaleAnimationButton: View {
     var text: String
     var fontSize: CGFloat
     var backgroundColor: Color
@@ -36,16 +36,15 @@ public struct PrimaryButton: View {
                 .background(backgroundColor)
                 .cornerRadius(cornerRadius)
         }
+        .buttonStyle(ScaleButtonStyle())
     }
 }
-@available(iOS 13.0.0, *)
-#Preview {
-    PrimaryButton(
-        text: "Test Button",
-        fontSize: 17,
-        backgroundColor: .blue,
-        foregroundColor: .black,
-        cornerRadius: 10) {
-            
-        }
+
+// adding animations on button
+struct ScaleButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 0.90 : 1.0)
+            .animation(.easeOut(duration: 0.2), value: configuration.isPressed)
+    }
 }
