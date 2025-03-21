@@ -21,6 +21,6 @@ currently there is no dependancy
 
 ## Example
 
-<p style="text-align:center;"><img src="https://github.com/SardarSaqibKhan/SwiftUIButtons/tree/main/Resources/IMG_3260.PNG?raw=true" width="50%" alt="Example"></p>
+<p style="text-align:center;"><img src="https://github.com/SardarSaqibKhan/SwiftUIButtons/blob/main/Resources/IMG_3260.PNG?raw=true" width="50%" alt="Example"></p>
 
 
